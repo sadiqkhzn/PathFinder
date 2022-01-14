@@ -71,28 +71,28 @@ class Node:
     
     def update_neighbors(self, grid):
         self.side_neighbors = []
-        if self.row < self.total_rows - 1 and not grid[self.row + 1][self.col].is_obstacle():  # DOWN
+        if self.row < self.total_rows - 1 and not grid[self.row + 1][self.col].is_obstacle():
             self.side_neighbors.append(grid[self.row + 1][self.col])
 
-        if self.row > 0 and not grid[self.row - 1][self.col].is_obstacle():  # UP
+        if self.row > 0 and not grid[self.row - 1][self.col].is_obstacle():
             self.side_neighbors.append(grid[self.row - 1][self.col])
 
-        if self.col < self.total_rows - 1 and not grid[self.row][self.col + 1].is_obstacle():  # RIGHT
+        if self.col < self.total_rows - 1 and not grid[self.row][self.col + 1].is_obstacle():
             self.side_neighbors.append(grid[self.row][self.col + 1])
 
-        if self.col > 0 and not grid[self.row][self.col - 1].is_obstacle():  # LEFT
+        if self.col > 0 and not grid[self.row][self.col - 1].is_obstacle():
             self.side_neighbors.append(grid[self.row][self.col - 1])
 
-        if self.col > 0 and self.row > 0 and not grid[self.row - 1][self.col - 1].is_obstacle():  # UP-LEFT
+        if self.col > 0 and self.row > 0 and not grid[self.row - 1][self.col - 1].is_obstacle():
             self.diagonal_neighbors.append(grid[self.row - 1][self.col - 1])
 
-        if self.col < self.total_rows - 1 and self.row < self.total_rows - 1 and not grid[self.row + 1][self.col + 1].is_obstacle():  # BOTTOM - RIGHT
+        if self.col < self.total_rows - 1 and self.row < self.total_rows - 1 and not grid[self.row + 1][self.col + 1].is_obstacle():
             self.diagonal_neighbors.append(grid[self.row + 1][self.col + 1])
 
-        if self.col > 0 and self.row < self.total_rows - 1 and not grid[self.row + 1][self.col - 1].is_obstacle():  # BOTTOM-LEFT
+        if self.col > 0 and self.row < self.total_rows - 1 and not grid[self.row + 1][self.col - 1].is_obstacle():
             self.diagonal_neighbors.append(grid[self.row + 1][self.col - 1])
 
-        if self.col < self.total_rows - 1 and self.row > 0 and not grid[self.row - 1][self.col + 1].is_obstacle():  # UP- RIGHT
+        if self.col < self.total_rows - 1 and self.row > 0 and not grid[self.row - 1][self.col + 1].is_obstacle():
             self.diagonal_neighbors.append(grid[self.row - 1][self.col + 1])
 
 def distance(point1, point2):
